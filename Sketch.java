@@ -6,8 +6,8 @@ public class Sketch extends PApplet {
   PImage imgMeteor;
 
   // x and y coordinate for meteor
-  float fltMeteorX = 50;
-  float fltMeteorY = 100;
+  float fltMeteorX = 0;
+  float fltMeteorY = 0;
 
   // meteor speed variables
   float fltXSpeed = 1;
@@ -15,6 +15,12 @@ public class Sketch extends PApplet {
 
   // define colours
   int black = color(0);
+
+  // gravity
+  float x;
+  float y;
+  float yspeed = 0;
+  float xspeed = 0;
 
   public void settings() {
     size(400, 400);
@@ -38,20 +44,12 @@ public class Sketch extends PApplet {
     fltMeteorX += fltXSpeed;
     fltMeteorY += fltYSpeed;
 
-    if (fltMeteorX >= width/2 || fltMeteorX < 0) {
-      fltMeteorX = fltMeteorX - 1;
-      fltMeteorY = fltMeteorY - 3;
+    if (fltMeteorX > width - imgMeteor.width || fltMeteorX < 0) {
+      fltXSpeed *= -1;
     }
-    else if (fltMeteorX <= width/2 || fltMeteorX > 0) {
-      fltMeteorX = fltMeteorX + 1;
-      fltMeteorY = fltMeteorY + 3;
-    }
-    //if (fltMeteorX > width - imgMeteor.width || fltMeteorX < 0) {
-      //fltXSpeed *= -1;
-    //}
 
-    //if (fltMeteorY > height - imgMeteor.height || fltMeteorY < 0) {
-      //fltYSpeed *= -1;
-    //}
+    if (fltMeteorY > height - imgMeteor.height || fltMeteorY < 0) {
+      fltYSpeed *= -1;
+    }
   }
 }
