@@ -16,12 +16,6 @@ public class Sketch extends PApplet {
   // define colours
   int black = color(0);
 
-  // gravity
-  float x;
-  float y;
-  float yspeed = 0;
-  float xspeed = 0;
-
   public void settings() {
     size(400, 400);
   }
@@ -29,10 +23,10 @@ public class Sketch extends PApplet {
   public void setup() {
 
     // load meteor
-    imgMeteor = loadImage("spaceMeteors_003.png");
+    imgMeteor = loadImage("imageVolleyball.png");
 
     // resize meteor
-    imgMeteor.resize(imgMeteor.width/4, imgMeteor.height/4);
+    imgMeteor.resize(imgMeteor.width/8, imgMeteor.height/8);
   }
 
   public void draw() {
