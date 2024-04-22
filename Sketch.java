@@ -2,22 +2,22 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * The program Sketch.java implements an image background, animates an image, and animates a shape.
- * Additionally, the program incorporates basic edge collision detection
+ * The program Sketch.java implements an image background, and animates an image and a shape.
+ * The program incorporates basic edge collision detection
  * such that the animated objects do not permenantaly move off the screen.
  * The animated image moves in a non-linear path (circular).
  * @author: E. Yap
  */
 public class Sketch extends PApplet {
-
+  // images
   PImage imgVolleyball;
   PImage imgBackgroundNet;
 
-  // x and y coordinate for volleyball
+  // x and y coordinates for the volleyball image
   float fltVolleyballX = 150;
   float fltVolleyballY = 50;
 
-  // radius, angle, and speed variables
+  // radius, angle, and speed variables for the volleyball image
   float fltVolleyballRadius;
   float fltVolleyballAngle;
   float fltVolleyballSpeed = (float) 0.05;
@@ -32,7 +32,7 @@ public class Sketch extends PApplet {
   float fltCircleSpeed = 3;
 
   /**
-   * Size call
+   * Size call.
    */
   public void settings() {
     size(400, 400);
@@ -81,7 +81,7 @@ public class Sketch extends PApplet {
     fltVolleyballX += width / 3 * cos (fltVolleyballAngle) * fltVolleyballSpeed;
     fltVolleyballY += height / 3 * sin (fltVolleyballAngle) * fltVolleyballSpeed;
 
-     // basic edge collision detection such that the volleyball does not permenantly move off the screen
+    // basic edge collision detection such that the volleyball does not permenantly move off the screen
     fltVolleyballX = constrain (fltVolleyballX, 0, width - 50);
     fltVolleyballY = constrain (fltVolleyballY, 0, height - 50);
     fltVolleyballAngle += fltVolleyballSpeed;
